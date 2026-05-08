@@ -1,0 +1,58 @@
+{
+    "version": "03-02",
+    "description": "A general-purpose subtitle editor with ASS/SSA support (arch1t3cht fork)",
+    "homepage": "https://github.com/arch1t3cht/Aegisub",
+    "license": {
+        "identifier": "BSD-3-Clause,MIT,BSDL,MPL-1.1",
+        "url": "https://github.com/arch1t3cht/Aegisub/blob/feature/LICENCE"
+    },
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/arch1t3cht/Aegisub/releases/download/migration03-02/Windows.MSVC.Release.-.portable.zip",
+            "hash": "214d53159f3ada038a87a63bba27f62b1fe12a85734036764755fc2513444a63"
+        }
+    },
+    "pre_install": [
+        "Expand-ZipArchive -Path \"$dir\\aegisub-portable-64.zip\" -DestinationPath \"$dir\"-ExtractDir \"aegisub-portable\" -Removal",
+        "'config.json' | ForEach-Object {",
+        "    if (Test-Path -LiteralPath \"$persist_dir\\$_\" -PathType Leaf) {",
+        "        Copy-Item -Path \"$persist_dir\\$_\" -Destination \"$dir\\$_\" -Force",
+        "    }",
+        "}"
+    ],
+    "pre_uninstall": [
+        "'config.json' | ForEach-Object {",
+        "    if (Test-Path -LiteralPath \"$dir\\$_\" -PathType Leaf) {",
+        "        ensure $persist_dir | Out-Null",
+        "        Copy-Item -Path \"$dir\\$_\" -Destination \"$persist_dir\\$_\" -Force",
+        "    }",
+        "}"
+    ],
+    "shortcuts": [
+        [
+            "aegisub.exe",
+            "Aegisub"
+        ]
+    ],
+    "persist": [
+        "autoback",
+        "automation",
+        "autosave",
+        "catalog",
+        "config"
+    ],
+    "checkver": {
+        "github": "https://github.com/arch1t3cht/Aegisub",
+        "regex": "/releases/tag/migration([0-9]+-[0-9]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/arch1t3cht/Aegisub/releases/download/migration$version/Windows.MSVC.Release.-.portable.zip"
+            }
+        }
+    }
+}
