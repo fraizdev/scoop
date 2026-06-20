@@ -1,10 +1,10 @@
 {
-    "version": "2026.4.1",
+    "version": "2026.6.0",
     "description": "GTK stack for Windows (GTK 4)",
     "homepage": "https://github.com/wingtk/gvsbuild",
     "license": "GPL-2.0",
-    "url": "https://github.com/wingtk/gvsbuild/releases/download/2026.4.1/GTK4_Gvsbuild_2026.4.1_x64.zip",
-    "hash": "a6c3e4b222a5a699f2f33140635033124d70f5ca21f9e9fc845d76e5337530ab",
+    "url": "https://github.com/wingtk/gvsbuild/releases/download/2026.6.0/GTK4_Gvsbuild_2026.6.0_x64.zip",
+    "hash": "01dbf613de732a42bedb425f034b84381970a652cef6c0b3906e4da1a6c18600",
     "post_install": [
         "$bin_path = Join-Path $dir \"bin\"",
         "$lib_path = Join-Path $dir \"lib\"",
