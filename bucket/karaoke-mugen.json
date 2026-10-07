@@ -1,10 +1,10 @@
 {
-    "version": "10.0.3",
+    "version": "10.0.5",
     "description": "Karaoke playlist manager/player app used in parties or events.",
     "homepage": "http://karaokes.moe",
     "license": "MIT",
-    "url": "https://mugen.karaokes.moe/downloads/Karaoke%20Mugen-10.0.3-win.zip",
-    "hash": "df429c6f505b5953b6fbb741f4626ce5b558cd6d56f37999449f6f20744067b1",
+    "url": "https://mugen.karaokes.moe/downloads/Karaoke%20Mugen-10.0.5-win.zip",
+    "hash": "02874609dcdd89d190c23e1981162a1c9be6e19d3bda7d69a22b7f0d627d7a88",
     "shortcuts": [
         [
             "Karaoke Mugen.exe",
